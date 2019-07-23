@@ -2,10 +2,6 @@ std = "lua51"
 max_line_length = false
 exclude_files = {
 	"babelfish.lua",
-	"WeakAuras_Main.lua",
-	"WeakAuras_Options.lua",
-	"WeakAuras_Templates.lua",
-	"WeakAuras/Libs/",
 	".luacheckrc",
 	"README.md"
 }
