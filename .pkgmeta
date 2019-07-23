@@ -1,3 +1,6 @@
 package-as: ClassicItemSetsLib-1.0
 
 enable-nolib-creation: no
+
+ignore:
+    - README.md
