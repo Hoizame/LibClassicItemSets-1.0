@@ -1,6 +1,6 @@
-# LibClassicItemSets-1.0.lua
+# LibClassicItemSets-1.0
 
-A library for WoW-Classic that contains all item sets with localization for the names.
+A library for WoW-Classic that contains all item sets with contained items and localization for the names.
 
 ## Usage
 
