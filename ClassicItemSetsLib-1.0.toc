@@ -4,6 +4,4 @@
 ## Author: Lag
 ## Version: 1.0.0
 
-LibStub\LibStub.lua
-
 ClassicItemSetsLib-1.0.xml
