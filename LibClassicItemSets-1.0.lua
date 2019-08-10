@@ -1,4 +1,4 @@
-local MAJOR, MINOR = "LibClassicItemSets-1.0", 1
+local MAJOR, MINOR = "LibClassicItemSets-1.0", 2
 assert(LibStub, MAJOR .. " requires LibStub")
 
 local CIS, oldversion = LibStub:NewLibrary(MAJOR, MINOR)
@@ -55,14 +55,14 @@ end
 --- Get itemtable
 -- @return { itemID1, itemID2, itemID3, ... }
 function CIS:GetItems(setID)
-    assert(SETS[setID], "Unknown setID - "..setID)
+    assert(SETS[setID], "Unknown setID - "..(setID or "nil"))
     return CopyTable(SETS[setID][1])
 end
 
 --- Get the player class for an ItemSet
 -- @return classID, className
 function CIS:GetPlayerClass(setID)
-    assert(SETS[setID], "Unknown setID - "..setID)
+    assert(SETS[setID], "Unknown setID - "..(setID or "nil"))
     if SETS[setID][3] then
         return SETS[setID][3], CLASS_LIST[ SETS[setID][3] ]
     else
@@ -72,14 +72,20 @@ end
 
 --- Get the icon for the ItemSet
 function CIS:GetSetIcon(setID)
-    assert(SETS[setID], "Unknown setID - "..setID)
+    assert(SETS[setID], "Unknown setID - "..(setID or "nil"))
     return SETS[setID][2] and GetItemIcon(SETS[setID][2] or SETS[setID][1][1])
+end
+
+--- Get colorID for a itemSet ( equals item quality colors )
+-- @return <number>
+function CIS:GetSetQualityID(setID)
+    return SETS[setID] and SETS[setID][4] or 0
 end
 
 --- Get the setID for an itemID if its part of a Set
 -- @return setID
 function CIS:GetItemSetForItemID(itemID)
-    return ITEMS[itemID]
+    return ITEMS[itemID or 0]
 end
 -- ##############################
 -- Lib intern use
